@@ -1,120 +1,79 @@
-// ================= ELEMENTS =================
+// ================= REGISTER FORM =================
 
-const loginForm = document.getElementById("loginForm");
 const signupForm = document.getElementById("signupForm");
 
-const loginBtn = document.getElementById("loginBtn");
-const signupBtn = document.getElementById("signupBtn");
-
-// ================= SHOW LOGIN =================
-
-function showLogin(){
-
-  loginForm.classList.remove("hidden");
-  signupForm.classList.add("hidden");
-
-  loginBtn.classList.add("active");
-  signupBtn.classList.remove("active");
-}
-
-// ================= SHOW SIGNUP =================
-
-function showSignup(){
-
-  signupForm.classList.remove("hidden");
-  loginForm.classList.add("hidden");
-
-  signupBtn.classList.add("active");
-  loginBtn.classList.remove("active");
-}
-
-// ================= SIGNUP =================
-
-// ================= SIGNUP =================
+// ================= SUBMIT REGISTRATION =================
 
 signupForm.addEventListener("submit", function(e){
 
   e.preventDefault();
 
-  // GET ALL INPUTS
+  // ================= GET INPUTS =================
+
   const inputs = signupForm.querySelectorAll("input");
 
-  // GET SELECT
-  const sqmSelect = signupForm.querySelector("select");
+  const selects = signupForm.querySelectorAll("select");
 
-  // VALUES
-  const fullname = inputs[0].value;
-  const address = inputs[1].value;
-  const fishpond = inputs[2].value;
+  // ================= INPUT VALUES =================
 
-  // SELECT VALUE
-  const sqm = sqmSelect.value;
+  const name = inputs[0].value;
 
-  const email = inputs[3].value;
-  const password = inputs[4].value;
+  const age = inputs[1].value;
 
-  // VALIDATE SQM
-  if(sqm === ""){
+  const birthday = inputs[2].value;
 
-    alert("Please select fishpond size.");
+  const contact = inputs[3].value;
 
-    return;
-  }
+  const fishCage = inputs[4].value;
 
-  // CREATE OBJECT
+  // ================= SELECT VALUES =================
+
+  const municipality = selects[0].value;
+
+  const fishpondArea = selects[1].value;
+
+  const memberType = selects[2].value;
+
+  const bangusConcept = selects[3].value;
+
+  const operationArea = selects[4].value;
+
+  const cycle = selects[5].value;
+
+  // ================= CREATE OBJECT =================
+
   const userData = {
-    fullname,
-    address,
-    fishpond,
-    sqm,
-    email,
-    password
+
+    name,
+    age,
+    birthday,
+    contact,
+    municipality,
+    fishpondArea,
+    memberType,
+    bangusConcept,
+    operationArea,
+    fishCage,
+    cycle
+
   };
 
-  // GET OLD USERS
+  // ================= GET OLD USERS =================
+
   let users = JSON.parse(localStorage.getItem("fishpondUsers")) || [];
 
-  // SAVE NEW USER
+  // ================= SAVE NEW USER =================
+
   users.push(userData);
 
   localStorage.setItem("fishpondUsers", JSON.stringify(users));
 
-  alert("Fishpond registered successfully!");
+  // ================= SUCCESS =================
 
-  // RESET FORM
+  alert("Registration Submitted Successfully!");
+
+  // ================= RESET FORM =================
+
   signupForm.reset();
-
-  // GO TO LOGIN
-  showLogin();
-
-});
-
-// ================= LOGIN =================
-
-loginForm.addEventListener("submit", function(e){
-
-  e.preventDefault();
-
-  const inputs = loginForm.querySelectorAll("input");
-
-  const email = inputs[0].value;
-  const password = inputs[1].value;
-
-  const users = JSON.parse(localStorage.getItem("fishpondUsers")) || [];
-
-  const foundUser = users.find(user =>
-    user.email === email &&
-    user.password === password
-  );
-
-  if(foundUser){
-
-    alert("Login successful!");
-
-  }else{
-
-    alert("Invalid email or password");
-
-  }
 
 });
