@@ -517,3 +517,26 @@ form select{
   transform:translateY(-2px);
 
 }
+
+.register-title{
+
+  text-align:center;
+
+  margin-bottom:25px;
+}
+
+.register-title h2{
+
+  color:#0077cc;
+
+  font-size:30px;
+
+  margin-bottom:5px;
+}
+
+.register-title p{
+
+  color:#666;
+
+  font-size:14px;
+}
