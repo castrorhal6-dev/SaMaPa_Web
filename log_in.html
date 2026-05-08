@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login - SaMaPa</title>
+
+  <link rel="stylesheet" href="samapa.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+
+  <div class="logo-section">
+
+    <img src="logo.png">
+
+    <div>
+      <h2>SaMaPa</h2>
+      <p>Fishpond Registration System</p>
+    </div>
+
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="samapaabout.html">About</a>
+    <a href="log_in.html">Login</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+
+</header>
+
+<section class="auth-section">
+
+  <div class="auth-container">
+
+    <div class="welcome-box">
+
+      <img src="logo.png">
+
+      <h2>Welcome to SaMaPa</h2>
+
+      <p>
+        Login or register your fishpond account.
+      </p>
+
+    </div>
+
+    <div class="form-box">
+
+      <div class="tabs">
+
+        <button type="button" id="loginBtn" class="active" onclick="showLogin()">
+        Login
+        </button>
+
+        <button type="button" id="signupBtn" onclick="showSignup()">
+        Sign Up
+        </button>
+
+      </div>
+
+      <!-- LOGIN -->
+      <form id="loginForm">
+
+        <h2>Login Account</h2>
+
+        <input type="email" placeholder="Email Address" required>
+
+        <input type="password" placeholder="Password" required>
+
+        <button class="submit-btn">
+          Login
+        </button>
+
+      </form>
+
+      <!-- SIGNUP -->
+      <!-- SIGNUP FORM -->
+
+<form id="signupForm" class="hidden">
+
+  <h2>Register Fishpond Member</h2>
+
+  <!-- NAME -->
+  <input type="text" placeholder="Name" required>
+
+  <!-- AGE -->
+  <input type="number" placeholder="Age" required>
+
+  <!-- BIRTHDAY -->
+  <input type="date" required>
+
+  <!-- CONTACT -->
+  <input type="text" placeholder="Contact Number" required>
+
+  <!-- MUNICIPALITY -->
+  <select required>
+
+  <option value="">Select Municipality / City</option>
+
+  <option>Agno</option>
+  <option>Aguilar</option>
+  <option>Alaminos City</option>
+  <option>Alcala</option>
+  <option>Anda</option>
+  <option>Asingan</option>
+  <option>Balungao</option>
+  <option>Bani</option>
+  <option>Basista</option>
+  <option>Bautista</option>
+  <option>Bayambang</option>
+  <option>Binalonan</option>
+  <option>Binmaley</option>
+  <option>Bolinao</option>
+  <option>Bugallon</option>
+  <option>Burgos</option>
+  <option>Calasiao</option>
+  <option>Dagupan City</option>
+  <option>Dasol</option>
+  <option>Infanta</option>
+  <option>Labrador</option>
+  <option>Laoac</option>
+  <option>Lingayen</option>
+  <option>Mabini</option>
+  <option>Malasiqui</option>
+  <option>Manaoag</option>
+  <option>Mangaldan</option>
+  <option>Mangatarem</option>
+  <option>Mapandan</option>
+  <option>Natividad</option>
+  <option>Pozorrubio</option>
+  <option>Rosales</option>
+  <option>San Carlos City</option>
+  <option>San Fabian</option>
+  <option>San Jacinto</option>
+  <option>San Manuel</option>
+  <option>San Nicolas</option>
+  <option>San Quintin</option>
+  <option>Santa Barbara</option>
+  <option>Santa Maria</option>
+  <option>Santo Tomas</option>
+  <option>Sison</option>
+  <option>Sual</option>
+  <option>Tayug</option>
+  <option>Umingan</option>
+  <option>Urbiztondo</option>
+  <option>Urdaneta City</option>
+  <option>Villasis</option>
+
+</select>
+
+  <!-- AREA OF FISHPOND -->
+  <select required>
+
+  <option value="">Select Municipality / City</option>
+
+  <option>Agno</option>
+  <option>Aguilar</option>
+  <option>Alaminos City</option>
+  <option>Alcala</option>
+  <option>Anda</option>
+  <option>Asingan</option>
+  <option>Balungao</option>
+  <option>Bani</option>
+  <option>Basista</option>
+  <option>Bautista</option>
+  <option>Bayambang</option>
+  <option>Binalonan</option>
+  <option>Binmaley</option>
+  <option>Bolinao</option>
+  <option>Bugallon</option>
+  <option>Burgos</option>
+  <option>Calasiao</option>
+  <option>Dagupan City</option>
+  <option>Dasol</option>
+  <option>Infanta</option>
+  <option>Labrador</option>
+  <option>Laoac</option>
+  <option>Lingayen</option>
+  <option>Mabini</option>
+  <option>Malasiqui</option>
+  <option>Manaoag</option>
+  <option>Mangaldan</option>
+  <option>Mangatarem</option>
+  <option>Mapandan</option>
+  <option>Natividad</option>
+  <option>Pozorrubio</option>
+  <option>Rosales</option>
+  <option>San Carlos City</option>
+  <option>San Fabian</option>
+  <option>San Jacinto</option>
+  <option>San Manuel</option>
+  <option>San Nicolas</option>
+  <option>San Quintin</option>
+  <option>Santa Barbara</option>
+  <option>Santa Maria</option>
+  <option>Santo Tomas</option>
+  <option>Sison</option>
+  <option>Sual</option>
+  <option>Tayug</option>
+  <option>Umingan</option>
+  <option>Urbiztondo</option>
+  <option>Urdaneta City</option>
+  <option>Villasis</option>
+
+</select>
+
+  <!-- MEMBER TYPE -->
+  <select required>
+
+    <option value="">Member Type</option>
+
+    <option>Operators</option>
+    <option>Workers</option>
+    <option>Traders</option>
+    <option>Processors</option>
+
+  </select>
+
+  <!-- BANGUS CONCEPT -->
+  <select required>
+
+    <option value="">Type of Bangus Concept</option>
+
+    <option>Nursery</option>
+    <option>Fingerlings</option>
+    <option>Grow out</option>
+
+  </select>
+
+  <!-- FISHPOND AREA -->
+  <select required>
+
+    <option value="">Estimated Area of Operation (Fishpond)</option>
+
+    <option>100 sqm</option>
+    <option>200 sqm</option>
+    <option>300 sqm</option>
+    <option>400 sqm</option>
+    <option>500 sqm</option>
+    <option>1000 sqm</option>
+    <option>2000 sqm</option>
+    <option>3000 sqm</option>
+    <option>4000 sqm</option>
+    <option>5000 sqm</option>
+    <option>10000 sqm</option>
+
+  </select>
+
+  <!-- FISH CAGE -->
+  <input type="number" placeholder="If Fish Cage or Fish Pen (Input Number)">
+
+  <!-- CYCLE -->
+  <select required>
+
+    <option value="">How many cycle in one year?</option>
+
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>N/A</option>
+
+  </select>
+
+  <!-- EMAIL -->
+  <input type="email" placeholder="Email Address" required>
+
+  <!-- PASSWORD -->
+  <input type="password" placeholder="Password" required>
+
+  <!-- BUTTON -->
+  <button class="submit-btn">
+    Register
+  </button>
+
+</form>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script src="samapa.js"></script>
+
+</body>
+</html>
